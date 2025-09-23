@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Poppins',sans-serif;
+  background:#111;
+  color:#fff;
+}
+
+/* ===== Navbar ===== */
+nav{
+  position:fixed;top:0;left:0;width:100%;
+  background:#000;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px 10%;
+  z-index:999;
+}
+nav .logo{font-size:1.5rem;font-weight:700;color:#b57bff;text-decoration:none;}
+nav ul{list-style:none;display:flex;gap:30px;}
+nav ul li a{
+  color:#ddd;text-decoration:none;font-weight:500;
+  transition:0.3s;
+}
+nav ul li a:hover, nav ul li a.active{color:#b57bff;}
+
+/* ===== Hero Section ===== */
+.hero{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:0 10%;
+}
+.hero-content{
+  display:flex;
+  flex-wrap:wrap;
+  gap:60px;
+  align-items:center;
+}
+.hero img{
+  width:300px;height:300px;
+  border-radius:50%;
+  object-fit:cover;
+  border:8px solid #b57bff;
+  box-shadow:0 0 20px #b57bff;
+  animation: fadeIn 1.2s ease-in forwards;   /* profile photo entry */
+}
+.text-box{max-width:500px;}
+.text-box h1{font-size:2.8rem;margin-bottom:10px; animation: slideUp 1s ease forwards;}
+.text-box h2{color:#b57bff;font-size:1.6rem;margin-bottom:20px; animation: slideUp 1.2s ease forwards;}
+.text-box p{line-height:1.6;color:#ccc;margin-bottom:25px; animation: slideUp 1.4s ease forwards;}
+
+/* ===== Social Icons ===== */
+.socials{
+  display:flex;
+  justify-content:flex-start;
+  gap:18px;
+  margin-bottom:22px;
+  opacity:0;                    /* start invisible */
+  animation: iconFade 1.8s ease forwards;
+  animation-delay:1.6s;          /* starts after text finishes */
+}
+.socials a{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:45px;height:45px;
+  border-radius:50%;
+  background:#222;
+  color:#fff;
+  transition:transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+.socials a:hover{
+  background:#b57bff;
+  transform:scale(1.15) rotate(5deg);
+  box-shadow:0 0 12px #b57bff;
+}
+
+/* Hire Me Button */
+.btn{
+  background:#b57bff;
+  padding:12px 30px;
+  border-radius:30px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  display:inline-block;
+  transition:0.3s;
+  opacity:0;
+  animation: fadeIn 2s ease forwards;
+  animation-delay:2s;
+}
+.btn:hover{
+  background:#b57bff;
+  transform:translateY(-2px);
+}
+
+/* ===== Keyframes ===== */
+@keyframes fadeIn{
+  0%{opacity:0;transform:scale(0.9);}
+  100%{opacity:1;transform:scale(1);}
+}
+@keyframes slideUp{
+  0%{opacity:0;transform:translateY(30px);}
+  100%{opacity:1;transform:translateY(0);}
+}
+@keyframes iconFade{
+  0%{opacity:0;transform:translateY(30px);}
+  100%{opacity:1;transform:translateY(0);}
+}
+
+@media(max-width:768px){
+  .hero-content{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo">Portfolio</a>
+  <ul>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About me</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="experience.html">experience</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <img src="yashu22.jpeg" alt="Profile">
+    <div class="text-box">
+      <h1>Hi, I'm Yashasvee</h1>
+      <h2>Software Engineer</h2>
+      <p>Passionate web developer creating scalable and innovative solutions
+         with expertise in HTML, CSS, JavaScript, and Python.</p>
+
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/yashasvee-masani-588061327/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/yashu-par" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="email.html"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.naukri.com/mnjuser/homepage" target="_blank"><i class="fas fa-briefcase"></i></a>
+      </div>
+
+      <a href="contact.html" class="btn">Hire Me</a>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

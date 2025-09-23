@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me | Yashasvee</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Poppins',sans-serif;
+  background:#0f0f0f;
+  color:#eee;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+}
+
+/* ===== Navbar ===== */
+nav{
+  position:fixed;top:0;left:0;width:100%;
+  background:#000;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px 10%;
+  z-index:999;
+}
+nav .logo{font-size:1.5rem;font-weight:700;color:#b57bff;text-decoration:none;}
+nav ul{list-style:none;display:flex;gap:30px;}
+nav ul li a{
+  color:#ddd;text-decoration:none;font-weight:500;
+  transition:0.3s;
+}
+nav ul li a:hover, nav ul li a.active{color:#b57bff;}
+/* Container */
+.about{
+  max-width:1100px;
+  width:90%;
+  display:flex;
+  gap:60px;
+  align-items:center;
+  padding:40px;
+  background:linear-gradient(145deg,#1c1c1c,#101010);
+  border-radius:20px;
+  box-shadow:0 0 30px rgba(0,0,0,0.6);
+  animation:fadeIn 1s ease forwards;
+}
+
+/* Text */
+.about-text h1{
+  font-size:2.2rem;
+  margin-bottom:20px;
+  color:#b57bff;
+}
+.about-text p{
+  line-height:1.7;
+  margin-bottom:18px;
+  color:#ccc;
+}
+
+/* Buttons */
+.buttons{
+  display:flex;
+  gap:20px;
+  margin-top:10px;
+}
+.buttons a{
+  text-decoration:none;
+  background:#b57bff;
+  color:#fff;
+  padding:12px 28px;
+  border-radius:8px;
+  font-weight:600;
+  transition:background 0.3s;
+}
+.buttons a:hover{background:#9d5bff;}
+
+/* Image */
+.about-img img{
+  width:260px;
+  height:260px;
+  border-radius:50%;
+  object-fit:cover;
+  border:6px solid #b57bff;
+  box-shadow:0 0 25px rgba(181,123,255,0.4);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(30px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+@media(max-width:900px){
+  .about{flex-direction:column;text-align:center;}
+  .about-text h1{font-size:1.8rem;}
+}
+
+</style>
+</head>
+<body>
+
+    
+<nav>
+  <a href="#" class="logo">Yashasvee</a>
+  <ul>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About me</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="experience.html">experience</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="about">
+  <div class="about-text">
+    <h1>About Me</h1>
+    <p>I’m a passionate and curious learner who enjoys building practical, user-friendly, and creative web solutions.
+       With strong skills in HTML, CSS, JavaScript, Python, and Django, I focus on writing clean and scalable code.</p>
+    <p>I combine problem-solving with an eye for design and detail, ensuring my projects are not only functional
+       but also engaging and visually appealing. Constantly exploring new technologies and trends, I love turning ideas into seamless digital experiences that inspire and engage users.</p>
+    <div class="buttons">
+      <!-- Replace the # with your real project page URL -->
+      <a href="https://github.com/yashu-par" target="_blank">View Projects</a>
+      <!-- Replace resume.pdf with your actual resume file path -->
+      <a href="new.pdf" target="_blank">View Resume</a>
+    </div>
+  </div>
+
+  <!-- Replace aboutphoto.jpg with your own image -->
+  <div class="about-img">
+    <img src="image2.jpeg" alt="Yashasvee">
+  </div>
+</div>
+
+</body>
+</html>

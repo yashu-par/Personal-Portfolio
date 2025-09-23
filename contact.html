@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Contact</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    /* General */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+    }
+
+  
+    /* Contact Section */
+    .contact-section {
+      padding: 80px 50px;
+      text-align: center;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    .contact-section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #ff004f;
+    }
+    .contact-info {
+      margin-bottom: 20px;
+    }
+    .contact-info p {
+      margin: 8px 0;
+    }
+    .social-icons a {
+      color: #fff;
+      font-size: 22px;
+      margin: 0 10px;
+      transition: 0.3s;
+    }
+    .social-icons a:hover {
+      color: #ff004f;
+      transform: scale(1.2);
+    }
+
+    /* Form */
+    .contact-form {
+      max-width: 500px;
+      margin: 30px auto;
+      text-align: left;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 6px;
+      outline: none;
+      font-size: 16px;
+      background: #222;
+      color: #fff;
+    }
+    .contact-form button {
+      background: #ff004f;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .contact-form button:hover {
+      background: #ff3366;
+      transform: scale(1.05);
+    }
+
+    /* Download CV */
+    .download-cv {
+      margin-top: 20px;
+    }
+    .download-cv a {
+      display: inline-block;
+      background: #ff004f;
+      color: white;
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+    .download-cv a:hover {
+      background: #ff3366;
+      transform: translateY(-3px);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #aaa;
+      background: #111;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <h2>Contact Me</h2>
+    <div class="contact-info">
+      <p><i class="fa-solid fa-envelope"></i> yashasveemasani@gmail.com</p>
+      <p><i class="fa-solid fa-phone"></i> ************</p>
+      <div class="social-icons">
+        <a href="https://github.com/yashu-par"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/yashasvee-masani-588061327/"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form">
+      <form id="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <!-- Download CV Button -->
+    <div class="download-cv">
+      <a href="new.pdf" download>Download CV</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Yashasvee Masani. All Rights Reserved.
+  </footer>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("y8BVHU9RH9WMxi5Kj"); // Public key
+    })();
+
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      emailjs.sendForm("service_op11kt9", "template_f4vribg", this)
+        .then(function() {
+          alert("✅ Your message has been sent successfully!");
+        }, function(error) {
+          alert("❌ Failed to send message. Please try again.");
+          console.log(error);
+        });
+    });
+  </script>
+
+</body>
+</html>

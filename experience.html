@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experience – Certificates & Internship</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  body {
+    margin: 0;
+    background: #121212;
+    font-family: "Segoe UI", Roboto, sans-serif;
+    color: #fff;
+  }
+  header {
+    background: #1f1f1f;
+    padding: 20px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+  }
+  .card {
+    background: #1e1e1e;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    width: 300px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  .card:hover { transform: scale(1.03); }
+  .card img {
+    width: 100%;
+    display: block;
+  }
+  .card h3 {
+    margin: 10px 0 5px;
+    font-size: 1.1rem;
+    color: #f0f0f0;
+  }
+  .card p {
+    font-size: 0.9rem;
+    padding: 0 10px 15px;
+    color: #bbb;
+  }
+  .btn {
+    background: transparent;
+    border: 1px solid #b57bff;
+    color: #b57bff;
+    padding: 12px 24px;
+    margin: 20px auto 60px;
+    display: block;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .btn:hover {
+    background: #b57bff;
+    color: #fff;
+  }
+  /* Hidden section style */
+  .hidden-section {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+  .hidden-section.show {
+    display: flex;
+    opacity: 1;
+  }
+
+  /* Animations */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes cardAnim {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<header>Certificates & Internship</header>
+
+<section class="container">
+  <!-- First visible row -->
+  <div class="card">
+    <img src="course.jpeg" alt="Course Certificate">
+    <h3>Course Completion</h3>
+    <p>Certificate of Course Completion for UI/UX Design</p>
+  </div>
+  <div class="card">
+    <img src="certificate.jpeg" alt="Internship Certificate">
+    <h3>Internship</h3>
+    <p>Certificate of Internship Completion at Santi Infosoft</p>
+  </div>
+  <div class="card">
+    <img src="java.jpeg" alt="Power BI Certificate">
+    <h3>Advance Java Certificate</h3>
+    <p>Certificate of course Completion at Universal Informatics</p>
+  </div>
+</section>
+
+<!-- Hidden certificates & internships -->
+<section class="container hidden-section" id="more-certs">
+  <div class="card">
+    <img src="python.jpeg" alt="Python Certificate">
+    <h3>Python Training</h3>
+    <p>Certificate for the Completion of Python 3.4.3 Training at IIT Bombay</p>
+  </div>
+  <div class="card">
+    <img src="codesoft.jpeg" alt="Django Certificate">
+    <h3>Internship</h3>
+    <p>Certificate of Internship Completion at Codsoft</p>
+  </div>
+  <div class="card">
+    <img src="certificate (2).jpeg" alt="MySQL Certificate">
+    <h3>Certificate</h3>
+    <p>Certificate of Participation in Workshop about "Software Testing"</p>
+  </div>
+  <!-- Add as many extra cards as needed -->
+</section>
+
+<button class="btn" id="see-more">See More</button>
+
+<script>
+  const btn = document.getElementById('see-more');
+  const moreSection = document.getElementById('more-certs');
+
+  btn.addEventListener('click', () => {
+    moreSection.classList.add('show');
+    btn.style.display = 'none'; // Hide button after click
+  });
+</script>
+
+</body>
+</html>

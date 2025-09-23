@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Skills</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Poppins',sans-serif;
+  background:#111;           /* dark theme */
+  color:#fff;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  padding:60px 20px;
+}
+
+
+/* ===== Navbar ===== */
+nav{
+  position:fixed;top:0;left:0;width:100%;
+  background:#000;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px 10%;
+  z-index:999;
+}
+nav .logo{font-size:1.5rem;font-weight:700;color:#b57bff;text-decoration:none;}
+nav ul{list-style:none;display:flex;gap:30px;}
+nav ul li a{
+  color:#ddd;text-decoration:none;font-weight:500;
+  transition:0.3s;
+}
+nav ul li a:hover, nav ul li a.active{color:#b57bff;}
+
+h1{
+  font-size:2.5rem;
+  margin-bottom:10px;
+  color:#b57bff;
+}
+p.sub{
+  color:#aaa;
+  margin-bottom:50px;
+  text-align:center;
+  max-width:600px;
+}
+
+/* ===== Skills Grid ===== */
+.skills{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:40px;
+  width:100%;
+  max-width:1100px;
+}
+.skill{
+  text-align:center;
+}
+
+/* ===== Circular Progress ===== */
+.circle{
+  position:relative;
+  width:160px;
+  height:160px;
+  margin:0 auto 20px;
+}
+svg{
+  transform:rotate(-90deg);
+  width:160px;
+  height:160px;
+}
+svg circle{
+  fill:none;
+  stroke:#333;
+  stroke-width:12;
+  stroke-linecap:round;
+}
+svg circle.progress{
+  stroke:#b57bff;
+  stroke-dasharray:465;  /* 2πr with r=74 ≈ 465 */
+  stroke-dashoffset:465;
+  transition:stroke-dashoffset 2s ease;
+}
+.percentage{
+  position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  font-size:1.5rem;
+  font-weight:600;
+}
+
+/* Hover glow */
+.skill:hover svg circle.progress{
+  filter:drop-shadow(0 0 10px #b57bff);
+}
+.skill h3{margin-top:10px;font-size:1.2rem;}
+</style>
+</head>
+<body>
+
+       
+<nav>
+  <a href="#" class="logo">Yashasvee</a>
+  <ul>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About me</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="experience.html">experience</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<h1>My Skills</h1>
+<p class="sub">“I’m a full-stack web developer skilled in front-end and back-end technologies, creating responsive, user-friendly websites and scalable applications with clean, efficient code.”
+</p>
+
+<div class="skills">
+  <!-- Existing Skills -->
+  <div class="skill" data-percent="90"><div class="circle">
+      <svg><circle cx="80" cy="80" r="74"></circle><circle class="progress" cx="80" cy="80" r="74"></circle></svg>
+      <div class="percentage">0%</div></div><h3>HTML</h3></div>
+
+  <div class="skill" data-percent="85"><div class="circle">
+      <svg><circle cx="80" cy="80" r="74"></circle><circle class="progress" cx="80" cy="80" r="74"></circle></svg>
+      <div class="percentage">0%</div></div><h3>CSS</h3></div>
+
+  <div class="skill" data-percent="80"><div class="circle">
+      <svg><circle cx="80" cy="80" r="74"></circle><circle class="progress" cx="80" cy="80" r="74"></circle></svg>
+      <div class="percentage">0%</div></div><h3>JavaScript</h3></div>
+
+  <div class="skill" data-percent="75"><div class="circle">
+      <svg><circle cx="80" cy="80" r="74"></circle><circle class="progress" cx="80" cy="80" r="74"></circle></svg>
+      <div class="percentage">0%</div></div><h3>Python</h3></div>
+
+  <div class="skill" data-percent="70"><div class="circle">
+      <svg><circle cx="80" cy="80" r="74"></circle><circle class="progress" cx="80" cy="80" r="74"></circle></svg>
+      <div class="percentage">0%</div></div><h3>Django</h3></div>
+
+  <div class="skill" data-percent="65"><div class="circle">
+      <svg><circle cx="80" cy="80" r="74"></circle><circle class="progress" cx="80" cy="80" r="74"></circle></svg>
+      <div class="percentage">0%</div></div><h3>MySQL</h3></div>
+
+  <!-- ➕ New Skills -->
+  <div class="skill" data-percent="70"><div class="circle">
+      <svg><circle cx="80" cy="80" r="74"></circle><circle class="progress" cx="80" cy="80" r="74"></circle></svg>
+      <div class="percentage">0%</div></div><h3>Java</h3></div>
+
+  <div class="skill" data-percent="60"><div class="circle">
+      <svg><circle cx="80" cy="80" r="74"></circle><circle class="progress" cx="80" cy="80" r="74"></circle></svg>
+      <div class="percentage">0%</div></div><h3>C Language</h3></div>
+</div>
+
+<script>
+const circumference = 2 * Math.PI * 74; // circle circumference
+document.querySelectorAll('.skill').forEach(skill=>{
+  const percent = parseInt(skill.dataset.percent);
+  const circle = skill.querySelector('circle.progress');
+  const text   = skill.querySelector('.percentage');
+
+  circle.style.strokeDasharray = circumference;
+  circle.style.strokeDashoffset = circumference;
+
+  // animate stroke
+  setTimeout(()=>{
+    circle.style.strokeDashoffset = circumference - (percent/100)*circumference;
+  }, 200);
+
+  // animate number
+  let cur = 0;
+  const animate = () => {
+    if(cur <= percent){
+      text.textContent = cur + '%';
+      cur++;
+      requestAnimationFrame(animate);
+    }
+  };
+  animate();
+});
+</script>
+
+</body>
+</html>
